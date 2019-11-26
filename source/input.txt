@@ -1,0 +1,2 @@
+(voice_hindi_NSK_diphone)
+(SayText "नमस्ते")

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    <head>
+        <title></title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'style.css') }}">
+    </head>
+    <body>
+            <ul>
+                <li><a class="active" href="/">Home</a></li>
+            </ul>
+            
+        <section>
+            <h1>Welcome to Text To Speech Converter</h1>
+        </section>
+        <div class="container">
+            <div class="jumbotron">
+                <div class="centerDiv">
+                    <div class="details">
+                        <label>Enter Text</label>
+                        <form action="{{ url_for('speak2') }}" method="post">
+                            <input type="text" id="nameid" name="speech"><br><br><br>
+                            <input class='btn btn-success' type="submit" value="System Generated Voice">
+                        </form>
+                    </div>
+                <br><br>
+            <div>
+                <button id=speak1 type="button" class='btn btn-success'>API Generated Voice</button>
+            </div>
+            
+
+            <audio controls id ="hell" src="" style="visibility: hidden;"></audio>
+                </div>  
+            </div>
+        </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" 
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+        <script>
+            $(document).ready(function(){
+                $('#speak1').click(function(){
+                    const tex = $('#nameid').val();
+                   
+                    $("#hell").attr("src","http://ivrapi.indiantts.co.in/tts?type=indiantts&text="+tex+"&api_key=d8c76ef0-021c-11ea-a054-1f155a096f3e&user_id=66606&action=play&numeric=hcurrency&lang=hi_mohita");
+                    $("#hell").trigger("play");
+                 });
+            });
+</script>
+
+    </body>
+</html>

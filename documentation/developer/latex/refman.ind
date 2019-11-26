@@ -1,0 +1,14 @@
+\begin{theindex}
+
+  \item {render}
+    \subitem {server.\+py}, \hyperpage{3}
+
+  \indexspace
+
+  \item {server.\+py}, \hyperpage{3}
+    \subitem {render}, \hyperpage{3}
+    \subitem {speak2}, \hyperpage{4}
+  \item {speak2}
+    \subitem {server.\+py}, \hyperpage{4}
+
+\end{theindex}
